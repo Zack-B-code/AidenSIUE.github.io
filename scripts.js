@@ -149,7 +149,7 @@ function loop() {
     }
 
     // generate random number to be used to send ball at random angle from the serve
-    randangle = Math.random() * (rangemax = rangemin) + rangemin;
+    randangle = Math.random() * (rangemax - rangemin) + rangemin;
 
     // give some time for the player to recover before launching the ball again
     setTimeout(() => {
