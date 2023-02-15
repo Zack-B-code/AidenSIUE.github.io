@@ -9,10 +9,9 @@ var ballSpeed = 6;
 var currentVolley = 0;
 
 // variables to be used for random serve angle
-let rangemax = 3.75;
-let rangemin = 0.25;
-let randrange = rangemax - rangemin;
-let randangle = Math.random();
+let rangemax = 3.8;
+let rangemin = 0.2;
+let randangle = 2;
 
 const leftPaddle = {
   // start in the middle of the game on the left side
@@ -150,9 +149,7 @@ function loop() {
     }
 
     // generate random number to be used to send ball at random angle from the serve
-    randangle = Math.random();
-    randangle = Math.floor(randangle * randrange);
-    randangle = randangle + rangemin;
+    randangle = Math.random() * (rangemax = rangemin) + rangemin;
 
     // give some time for the player to recover before launching the ball again
     setTimeout(() => {
