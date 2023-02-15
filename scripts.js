@@ -150,14 +150,15 @@ function loop() {
     }
 
     // generate random number to be used to send ball at random angle from the serve
+    randangle = Math.random();
     randangle = Math.floor(randangle * randrange);
-    randangle = randangle + 0.25;
+    randangle = randangle + rangemin;
 
     // give some time for the player to recover before launching the ball again
     setTimeout(() => {
       ball.resetting = false;
       ball.x = canvas.width / 2;
-      ball.y = canvas.height / randangle;
+      ball.y = canvas.height / randangle; // the height at which the ball starts from is randomized
     }, 900);
     
     currentVolley = 0;
